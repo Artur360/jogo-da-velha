@@ -2,38 +2,44 @@
 <html lang="pt-br">
 
 <head>
+    <link rel="shortcurt icon" href="download.png">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Velha</title>
     <style>
+        .board {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            grid-template-rows: repeat(3, 150px);
+            gap: 15px;
+        }
 
-.board{
-    margin-top: 20px;
-display: grid;
-grid-template-columns: repeat(3, 150px);
-grid-template-rows: repeat(3, 150px);
-gap: 15px;
-}
-
-.cell{
-    display: flex;
-background-color: darkolivegreen;
-border: 5px solid rgb(78, 145, 78);
-align-items: center;
-font-size: 64px;
-cursor: pointer;
-font-family: sans-serif;
-justify-content: center;
-    }
-
-
+        .cell {
+            color: rgb(0, 0, 0);
+            display: flex;
+            background-image: url(Sem\ título.png);
+            background-size: 150px ;
+            background-position: -5vh;
+            border: 5px solid rgb(92, 92, 92);
+            align-items: center;
+            font-size: 64px;
+            cursor: pointer;
+            font-family: sans-serif;
+            justify-content: center;
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>Jogo da Velha</h1>
+
+
+    <header>
+        <h1>Jogo da Velha</h1>
+    </header>
+
 
     <div class="board" id="board">
         <div class="cell" onclick="cellClicked (0)"></div>
@@ -49,8 +55,13 @@ justify-content: center;
     </div>
 
     <script>
+      
+var img = "3089596.png";
 
-        let currentPlayer = 'X';
+            let currentPlayer = "3089596.png";
+
+var img2 = "b58b83d2ab52a37e8cb81f5dde8dfe91 (1).png";
+
         let board = ['', '', '', '', '', '', '', '', ''];
 
         function cellClicked(index) {
@@ -61,11 +72,11 @@ justify-content: center;
 
                 document.getElementById('board').children[index].
 
-                    innerText = currentPlayer;
+                  innerHTML = `<img src="${currentPlayer}">`
 
                 checkWinner();
 
-                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                currentPlayer = currentPlayer === img ? img2 : img;
 
             }
 
@@ -101,12 +112,16 @@ justify-content: center;
         }
 
         function resetBoard() {
-            currentPlayer = 'X';
+            currentPlayer = '3089596.png';
             board = ['', '', '', '', '', '', '', '', ''];
             for (let i = 0; i < 9; i++) {
                 Document.getElementById('board').children[i].innerText = '';
 
             }
+fun
+        
+
+
         }
 
     </script>
